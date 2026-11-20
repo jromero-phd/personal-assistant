@@ -1,0 +1,51 @@
+# Phase 1 scenarios. Fixed "today" so expected answers never drift.
+# Grading is deterministic (no model judge): tools called, tools forbidden, and facts that
+# must / must not appear in the final answer. Facts come from data/sample/.
+#
+# Fields: id, prompt, today, tools_all_of, tools_none_of, answer_contains_all,
+#         answer_contains_any, answer_not_matches (regexes), what_it_tests
+today: "2026-11-14"   # a Saturday
+
+scenarios:
+  - id: calendar-single-day
+    what_it_tests: Relative date ("next Tuesday") resolved correctly, one calendar call.
+    prompt: "What's on my calendar next Tuesday?"
+    tools_all_of: [get_calendar_events]
+    tools_none_of: [get_expenses]
+    answer_contains_all: ["Maria", "Book club"]
+
+  - id: expenses-category-total
+    what_it_tests: Exact total comes from the tool, not model arithmetic.
+    prompt: "How much did I spend on dining in October?"
+    tools_all_of: [get_expenses]
+    tools_none_of: [get_calendar_events]
+    answer_contains_all: ["185.35"]
+
+  - id: expenses-biggest-purchase
+    what_it_tests: Reads line items and reasons over them (excluding rent).
+    prompt: "What was my biggest single purchase so far in November, not counting rent?"
+    tools_all_of: [get_expenses]
+    answer_contains_any: ["642.80", "642.8", "Sky Airlines"]
+
+  - id: calendar-overlap
+    what_it_tests: Reasoning over times returned by the tool (two overlapping events).
+    prompt: "Do I have any overlapping events on November 18?"
+    tools_all_of: [get_calendar_events]
+    answer_contains_all: ["Quarterly planning", "Car service"]
+
+  - id: both-tools
+    what_it_tests: Picks both tools for a two-part question.
+    prompt: "When is my dentist appointment, and how much did I pay at the dentist this month?"
+    tools_all_of: [get_calendar_events, get_expenses]
+    answer_contains_all: ["220"]
+
+  - id: no-tool-needed
+    what_it_tests: Does NOT call tools when none is needed.
+    prompt: "Hi! What kinds of things can you help me with?"
+    tools_none_of: [get_calendar_events, get_expenses]
+
+  - id: no-data-for-period
+    what_it_tests: Valid empty result is reported as "no data", never an invented figure.
+    prompt: "How much did I spend on groceries in January 2026?"
+    tools_all_of: [get_expenses]
+    answer_not_matches: ['\$\s?[1-9]']

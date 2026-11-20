@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "assistant"
+version = "0.1.0"
+description = "Personal assistant agent: a hands-on project for learning agentic architecture"
+requires-python = ">=3.10"
+dependencies = [
+    "claude-agent-sdk>=0.2.181",
+    "pyyaml>=6",
+]
+
+[project.optional-dependencies]
+# anthropic is only needed by labs/raw_loop.py (a lab), not by the product.
+labs = ["anthropic>=2.8"]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+assistant = "assistant.adapters.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

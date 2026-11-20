@@ -1,0 +1,38 @@
+date,merchant,category,amount,note
+2026-10-01,Maple Apartments,housing,1450.00,October rent
+2026-10-02,Fresh Market,groceries,84.31,
+2026-10-03,City Power & Light,utilities,96.40,
+2026-10-04,Spotify,subscriptions,11.99,
+2026-10-04,Netflix,subscriptions,15.49,
+2026-10-05,Trattoria Roma,dining,62.10,
+2026-10-07,Fresh Market,groceries,91.75,
+2026-10-08,Metro Transit,transport,40.00,monthly pass
+2026-10-10,Cinema Max,entertainment,28.50,
+2026-10-12,Fresh Market,groceries,77.20,
+2026-10-14,Corner Cafe,dining,18.75,
+2026-10-15,Pharmacy Plus,health,23.60,
+2026-10-17,Sushi Go,dining,54.30,
+2026-10-19,Fresh Market,groceries,88.45,
+2026-10-21,Online Mart,shopping,42.99,
+2026-10-24,Corner Cafe,dining,16.40,
+2026-10-26,Fresh Market,groceries,95.10,
+2026-10-28,Gas-N-Go,transport,38.20,
+2026-10-30,Pizza Palace,dining,33.80,
+2026-10-31,Seasonal Supplies,shopping,27.45,
+2026-11-01,Maple Apartments,housing,1450.00,November rent
+2026-11-01,Streamline Gym,subscriptions,39.00,
+2026-11-02,Fresh Market,groceries,102.60,
+2026-11-03,City Power & Light,utilities,128.75,heating season
+2026-11-04,Spotify,subscriptions,11.99,
+2026-11-04,Netflix,subscriptions,15.49,
+2026-11-04,Metro Transit,transport,40.00,monthly pass
+2026-11-05,Steakhouse 21,dining,148.90,anniversary dinner
+2026-11-06,Online Mart,shopping,189.99,winter coat
+2026-11-07,Fresh Market,groceries,96.30,
+2026-11-08,Corner Cafe,dining,21.30,
+2026-11-09,Style Studio,personal_care,45.00,haircut
+2026-11-10,Sky Airlines,travel,642.80,Denver flight (Thanksgiving)
+2026-11-11,Bright Smile Dental,health,220.00,cleaning copay
+2026-11-12,Sushi Go,dining,71.40,
+2026-11-12,Gas-N-Go,transport,41.50,
+2026-11-13,Fresh Market,groceries,88.10,

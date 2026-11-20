@@ -1,0 +1,16 @@
+# Secrets: never commit
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Eval run output (contains model answers and costs)
+evals/results/
+
+# macOS
+.DS_Store
